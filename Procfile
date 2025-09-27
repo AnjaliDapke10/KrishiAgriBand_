@@ -1,1 +1,1 @@
-web: gunicorn Soil_detection.app:app
+web: gunicorn app:app
