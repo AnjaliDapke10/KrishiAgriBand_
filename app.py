@@ -132,9 +132,7 @@ if __name__ == '__main__':
         # Initialize video database
         from blueprints.videos import initialize_videos
         initialize_videos()
-    
-    # Run locally only
     port = int(os.environ.get('PORT', 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
-
+    # Use threaded=True and disable reloader to avoid Windows socket issues
+    app.run(debug=True, host='127.0.0.1', port=port, threaded=True, use_reloader=False)
 
